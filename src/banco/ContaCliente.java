@@ -15,8 +15,11 @@ public class ContaCliente {
 
     public void saldo() {
 
+        String cor = "\u001B[";
+
+        System.out.print(cor + "33" + "m");
         System.out.println("------------------------------");
-        System.out.println();
+        System.out.print(cor + "m");
         System.out.println(getNome_do_banco());
         System.out.printf("Numero da agência: %d", getNumero_da_agencia());
         System.out.println();
@@ -25,8 +28,10 @@ public class ContaCliente {
         System.out.println();
         System.out.printf("Seu rendimento no final do mês será: %.2f", calculaRendimento());
         System.out.println();
+        System.out.print(cor + "33" + "m");
         System.out.println("------------------------------");
-        System.out.println();
+        System.out.print(cor + "m");
+
     }
 
     private double calculaRendimento() {
@@ -45,9 +50,12 @@ public class ContaCliente {
         try {
 
             Scanner teclado1 = new Scanner(System.in);
-            
+
+            String cor2 = "\u001B[";
+
+            System.out.print(cor2 + "34" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor2 + "m");
             System.out.println(getNome_do_banco());
             System.out.printf("Numero da agência: %d", getNumero_da_agencia());
             System.out.println();
@@ -55,23 +63,34 @@ public class ContaCliente {
             System.out.printf("Seu saldo atual é: %.2f", getSaldo_da_conta());
             System.out.println();
             System.out.println("Digite o valor para sacar: ");
-            double saque = teclado1.nextDouble();
+            double saq = teclado1.nextDouble();
+            System.out.print(cor2 + "34" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor2 + "m");
+
+            double saque = saq;
 
             if (getSaldo_da_conta() == 0) {
 
+                System.out.print(cor2 + "31" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
                 System.out.println("Você não tem dinheiro suficiente "
                         + "para realizar o saque!");
+                System.out.print(cor2 + "31" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
 
             } else if (saque > getSaldo_da_conta()) {
 
+                System.out.print(cor2 + "31" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
                 System.out.println("O valor que você solicitou para saque"
                         + " é maior que o dinheiro em conta");
+                System.out.print(cor2 + "31" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
 
             } else {
 
@@ -80,17 +99,19 @@ public class ContaCliente {
 
                 double novo_saque = getSaldo_da_conta() - saque;
 
+                System.out.print(cor2 + "32" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
                 System.out.println("Saque realizado!");
-                System.out.println();
                 System.out.printf("Saldo atual: %.2f", novo_saque);
                 System.out.println();
                 System.out.printf("Valor sacado: %.2f", saque);
                 System.out.println();
                 System.out.print("Data e hora local: ");
                 System.out.println(df1.format(data1));
-                System.out.println();
+                System.out.print(cor2 + "32" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor2 + "m");
 
             }
 
@@ -98,9 +119,14 @@ public class ContaCliente {
 
             DateFormat df2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             Date data2 = new Date();
+            String cor3 = "\u001B[";
 
+            System.out.print(cor3 + "34" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor3 + "m");
+            System.out.print(cor3 + "31" + "m");
+            System.out.println("------------------------------");
+            System.out.print(cor3 + "m");
             System.out.println(getNome_do_banco());
             System.out.println("Você digitou um campo errado :( ");
             System.out.println("Operação de saque foi cancelada!");
@@ -108,8 +134,9 @@ public class ContaCliente {
             System.out.println();
             System.out.print("Data e hora local: ");
             System.out.println(df2.format(data2));
-            System.out.println();
+            System.out.print(cor3 + "31" + "m");
             System.out.println("------------------------------");
+            System.out.print(cor3 + "m");
 
         }
 
@@ -120,9 +147,11 @@ public class ContaCliente {
         try {
 
             Scanner teclado2 = new Scanner(System.in);
-            
+
+            String cor4 = "\u001B[";
+            System.out.print(cor4 + "33" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor4 + "m");
             System.out.println(getNome_do_banco());
             System.out.printf("Numero da agência: %d", getNumero_da_agencia());
             System.out.println();
@@ -130,9 +159,12 @@ public class ContaCliente {
             System.out.printf("Seu saldo atual é: %.2f ", getSaldo_da_conta());
             System.out.println();
             System.out.println("Digite o valor para depositar: ");
-            double deposito = teclado2.nextDouble();
+            double dep = teclado2.nextDouble();
+            System.out.print(cor4 + "33" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor4 + "m");
+
+            double deposito = dep;
 
             if (deposito > 0) {
 
@@ -141,17 +173,19 @@ public class ContaCliente {
 
                 double novo_deposito = getSaldo_da_conta() + deposito;
 
+                System.out.print(cor4 + "32" + "m");
                 System.out.println("------------------------------");
-                System.out.println("Saque realizado!");
-                System.out.println();
+                System.out.print(cor4 + "m");
+                System.out.println("Deposito realizado!");
                 System.out.printf("Saldo atual: %.2f", novo_deposito);
                 System.out.println();
                 System.out.printf("Valor depositado: %.2f", deposito);
                 System.out.println();
                 System.out.print("Data e hora local: ");
                 System.out.println(df3.format(data3));
-                System.out.println();
+                System.out.print(cor4 + "32" + "m");
                 System.out.println("------------------------------");
+                System.out.print(cor4 + "m");
 
             } else {
                 System.out.println("Erro!!!");
@@ -161,9 +195,14 @@ public class ContaCliente {
 
             DateFormat df4 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             Date data4 = new Date();
+            String cor5 = "\u001B[";
 
+            System.out.print(cor5 + "33" + "m");
             System.out.println("------------------------------");
-            System.out.println();
+            System.out.print(cor5 + "m");
+            System.out.print(cor5 + "31" + "m");
+            System.out.println("------------------------------");
+            System.out.print(cor5 + "m");
             System.out.println(getNome_do_banco());
             System.out.println("Você digitou um campo errado :( ");
             System.out.println("Operação de deposito foi cancelada!");
@@ -171,8 +210,9 @@ public class ContaCliente {
             System.out.println();
             System.out.print("Data e hora local: ");
             System.out.println(df4.format(data4));
-            System.out.println();
+            System.out.print(cor5 + "31" + "m");
             System.out.println("------------------------------");
+            System.out.print(cor5 + "m");
 
         }
 
